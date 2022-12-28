@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class TermRateRepo {
+public class TermRate {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;

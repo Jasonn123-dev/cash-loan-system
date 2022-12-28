@@ -6,5 +6,40 @@
 </head>
 <body>
 <h1>APPROVED LOAN REQUEST</h1>
+<form class="form" id="form"
+      action="thankYou.html" autocomplete="off" onsubmit="return validation()";>
+
+    <div class="form-control">
+        <lable>Name:</lable>
+        <br>
+        <input type="text" name="" id="name" placeholder="Jayson Sequino">
+        <br><span id="name1"></span>
+
+        <br>
+        <lable>Email:</lable><br>
+        <input type="text"Email="" id="email" placeholder="jayequino@gmail.com">
+        <br><span id="email1"></span>
+
+        <br>
+        <lable>PAN number:</lable><br>
+        <input type="text"pan="" id="pan" placeholder="00947">
+        <br><span id="pan1"></span>
+        <br>
+
+        <lable>Loan Amount:</lable><br>
+        <input type="text"loan amount="" id="amount" placeholder="10000">
+        <br><span id="amount1"></span>
+        <br>
+        <br>
+
+    </div>
+    <input type="submit" value="Approve" name="update" id="update" onclick="validation()">
+
+    <input type="submit" value="Disapprove" name="submit" id="submit" onclick="validation()">
+
+
+
+
+</form>
 </body>
 </html>
