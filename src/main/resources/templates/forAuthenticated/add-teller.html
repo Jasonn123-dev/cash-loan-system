@@ -1,18 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="ISO-8859-1">
+    <title>Teller</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
 </head>
 <body>
-<h1>ADD TELLER</h1>
-<form action="/action_page.php" method="get" id="form1">
-    <label for="fName">First name:</label>
-    <input type="text" id="fName" name="fName"><br><br>
-    <label for="lName">Last name:</label>
-    <input type="text" id="lName" name="lName">
-</form>
+<div class="container my-2" align="center">
 
-<button type="submit" form="form1" value="Submit">Save</button>
+    <h3>Teller List</h3>
+    <a th:href="@{/teller/new-teller}" class="btn btn-primary btn-sm mb-3" >Add Teller</a>
+    <table style="width:80%" border="1"
+           class = "table table-striped table-responsive-md">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Roles</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="teller:${allergist}">
+            <td th:text="${teller.name}"></td>
+            <td th:text="${teller.email}"></td>
+<!--            <td th:text="${teller.department}"></td>-->
+            <td> <a th:href="@{/showFormForUpdate/{id}(id=${teller.id})}"
+                    class="btn btn-primary">Update</a>
+                <a th:href="@{/deleteTeller/{id}(id=${teller.id})}"
+                   class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
 </body>
 </html>
